@@ -1,0 +1,40 @@
+{
+  "name": "isbndbjs",
+  "description": "Use the ISBN DB API to pull information of books",
+  "version": "0.1.0",
+  "tags": [
+    "isbn",
+    "isbndb",
+    "book",
+    "books"
+  ],
+  "keywords": [
+    "isbn",
+    "isbndb",
+    "book",
+    "books",
+    "sdk",
+    "authors"
+  ],
+  "author": "Rohit Sharma <me@rohit-sharma.in>",
+  "dependencies": {
+    "request": "2.39.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rohit9889/isbndbjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rohit9889/isbndbjs/issues"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/rohit9889/isbndbjs",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
