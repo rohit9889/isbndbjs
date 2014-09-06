@@ -15,7 +15,7 @@ An SDK for retrieving data from [ISBNDB]
     
 ### Usage
 
-First of all you will have to initialize the SDK using the API Key which can be obtained from [Account Page][1].
+First of all you will have to initialize the SDK using the API Key, which can be obtained after you [create an account][1] and then go to [access keys manager][2].
 
     var ISBNDB = require('isbndb')
     ISBNDB.initialize("YOUR_API_KEY_HERE")
@@ -41,4 +41,5 @@ Please report all the issues in the Github Issues Page, suggestions are also wel
 * Change from Callback to Promises
 
 [isbndb]: http://isbndb.com
-[1]: http://isbndb.com/account/dev
+[1]: http://isbndb.com/account/create.html
+[2]: http://isbndb.com/account/dev/keys/
