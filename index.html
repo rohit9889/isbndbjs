@@ -29,36 +29,99 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+            <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages">
+              <span class="octicon octicon-link"></span>
+            </a>
+            Features
+          </h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+          <p>
+            <ul class="task-list">
+              <li>Get a particular book using its 10-Digit ISBN, 13-Digit ISBN, or its internal ISBNDB book_id</li>
+              <li>Search books by title, author, ISBN number etc.</li>
+            </ul>
+          </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+          <h3>
+            <a name="designer-templates" class="anchor" href="#designer-templates">
+              <span class="octicon octicon-link"></span>
+            </a>
+            Install
+          </h3>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+          <p>
+            <pre>
+              <code>npm install isbndbjs</code>
+            </pre>
+          </p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+          <h3>
+            <a name="rather-drive-stick" class="anchor" href="#rather-drive-stick">
+              <span class="octicon octicon-link"></span>
+            </a>
+            Usage
+          </h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+          <p>
+            First of all you will have to initialize the SDK using the API Key, which can be obtained after you
+            <a href="http://isbndb.com/account/create.html">create an account</a> and then go to
+            <a href="http://isbndb.com/account/dev/keys/">access keys manager</a>.
+          </p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+          <p>
+            <pre>
+              <code>
+                var ISBNDB = require('isbndb')
+                ISBNDB.initialize("YOUR_API_KEY_HERE")
+              </code>
+            </pre>
+          </p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+          <p>
+            Now, you can use the API as desired. For instance, if you want to search the book "Is God a Mathematician?" whose 13-Digit ISBN number is "9780743294065", it can be done using:
+          </p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+          <p>
+            <pre>
+              <code>
+                ISBNDB.Books.get("9780743294065", function(responseBody){
+                  // .... successful response callback
+                }, function(errorResponse){
+                  // .... error callback
+                })
+              </code>
+            </pre>
+          </p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+          <h3>
+            <a name="rather-drive-stick" class="anchor" href="#rather-drive-stick">
+              <span class="octicon octicon-link"></span>
+            </a>
+            Issues and Suggestions
+          </h3>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+          <p>
+            Please report all the issues in the Github Issues Page, suggestions are also welcome. You can also mail me at 
+            <a href="mailto:rohit0981989@gmail.com">rohit0981989@gmail.com</a> for the same.
+          </p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+          <h3>
+            <a name="rather-drive-stick" class="anchor" href="#rather-drive-stick">
+              <span class="octicon octicon-link"></span>
+            </a>
+            Future Modifications
+          </h3>
+
+          <p>
+            <ul class="task-list">
+              <li>Addition of Authors API</li>
+              <li>Addition of Publishers API</li>
+              <li>Addition of Categories API</li>
+              <li>Addition of Subjects API</li>
+              <li>Change from Callback to Promises</li>
+            </ul>
+          </p>
+
         </section>
 
         <aside id="sidebar">
