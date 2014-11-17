@@ -1,7 +1,7 @@
 {
   "name": "isbndbjs",
   "description": "Use the ISBN DB API to pull information of books",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "tags": [
     "isbn",
     "isbndb",
@@ -18,7 +18,8 @@
   ],
   "author": "Rohit Sharma <me@rohit-sharma.in>",
   "dependencies": {
-    "request": "2.39.0"
+    "request": "2.39.0",
+    "q": "1.1.0"
   },
   "repository": {
     "type": "git",

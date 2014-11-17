@@ -4,15 +4,16 @@ var assert = require('assert')
 ISBNDB.initialize("A9QB4LCQ")
 var isbn13 = '9780743294065'
 
-ISBNDB.Books.get(isbn13, function(responseBody){
-  assert.equal(responseBody.data[0].isbn13, isbn13, 'The 13-digit ISBN code must match');
+var bookData
+ISBNDB.Books.get(isbn13)
+.then(function(bookData){
+  assert.equal(bookData.isbn13, isbn13, 'The 13-digit ISBN code must match')
+  return bookData.getAuthor()
 })
-
-var search = {
-  query: "Mario Livio",
-  type: "author_name"
-}
-
-ISBNDB.Books.search(search, function(responseBody){
-  assert.equal(responseBody.data[0].isbn10, '3406605958', 'The 10-digit ISBN code must match');
+.then(function(author){
+  assert.equal(author.book_count, 43, 'Author retrieval failed')
+  return author.getAllBooks()
+})
+.then(function(books){
+  assert.equal(books.length, 10, 'Book retrieval failed')
 })
