@@ -58,6 +58,7 @@ If you desire to search books written by Shakespeare, it can be done in the foll
 
 ##### Authors API
 If you know the `author_id` for any author, you can directly get the author data as below:
+
     ISBNDB.Author.get('richards_rowland')
     .then(function(authorData){
       // Play with author data
@@ -66,6 +67,7 @@ If you know the `author_id` for any author, you can directly get the author data
     })
 
 You can also search for authors as shown below:
+
     ISBNDB.Author.search('william')
     .then(function(authors){
       // An array of authors
