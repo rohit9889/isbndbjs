@@ -1,156 +1,207 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>isbndbjs</title>
     <meta name="description" content="A javascript SDK for retrieving data from the ISBNDB site. Fetch books, authors, and other information from the isbndb site." />
     <meta name="keywords" content="isbndbjs, node-sdk, node, sdk, isbndbjs" />
+    <title>isbndbjs</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>Isbndbjs</h1>
-        <h2>Node SDK for ISBNDB</h2>
-        <a href="https://github.com/rohit9889/isbndbjs" class="button"><small>View project on</small>GitHub</a>
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+      <div class="container custom-wrapper">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">Rohit Sharma</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about.html">About</a>
+            </li>
+            <li>
+              <a href="http://rohitsharma9889.wordpress.com" target="_blank">Blog</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-            <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages">
-              <span class="octicon octicon-link"></span>
+    <div class="container bs-docs-container custom-wrapper">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="jumbotron">
+            <h1>isbndbjs</h1>
+            <p>Node SDK for ISBNDB</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="github">
+            <a href="https://github.com/rohit9889/isbndbjs" class="btn btn-default btn-lg" target="_blank">
+              <i class="fa fa-github-alt"></i>
+              View on GitHub
             </a>
-            Features
-          </h3>
-
-          <p>
-            <ul class="task-list">
-              <li>Get a particular book using its 10-Digit ISBN, 13-Digit ISBN, or its internal ISBNDB book_id</li>
-              <li>Search books by title, author, ISBN number etc.</li>
-            </ul>
-          </p>
-
-          <h3>
-            <a name="designer-templates" class="anchor" href="#designer-templates">
-              <span class="octicon octicon-link"></span>
+            <a href="https://github.com/rohit9889/isbndbjs/zipball/master" class="btn btn-default btn-lg" target="_blank">
+              <i class="fa fa-file-zip-o"></i>
+              Download Zip
             </a>
-            Install
-          </h3>
-
-          <p>
-            <pre>
-              <code>npm install isbndbjs</code>
-            </pre>
-          </p>
-
-          <h3>
-            <a name="rather-drive-stick" class="anchor" href="#rather-drive-stick">
-              <span class="octicon octicon-link"></span>
+            <a href="https://github.com/rohit9889/isbndbjs/tarball/master" class="btn btn-default btn-lg" target="_blank">
+              <i class="fa fa-file-zip-o"></i>
+              Download Tarball
             </a>
-            Usage
-          </h3>
-
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Features</h2>
+          <ul class="bullet-less">
+            <li>
+              <i class="fa fa-check"></i>
+              Get a particular book using its 10-Digit ISBN, 13-Digit ISBN, or its internal ISBNDB book_id
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Search books by title, author, ISBN number etc.
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Get a particular Author based on <code>author_id</code> on ISBNDB
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Search authors
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Install</h2>
+          <pre>npm install isbndbjs</pre>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Usage</h2>
           <p>
             First of all you will have to initialize the SDK using the API Key, which can be obtained after you
-            <a href="http://isbndb.com/account/create.html">create an account</a> and then go to
-            <a href="http://isbndb.com/account/dev/keys/">access keys manager</a>.
+            <a href="http://isbndb.com/account/create.html" target="_blank" rel="nofollow">create an account</a>
+            and then go to <a href="http://isbndb.com/account/dev/keys/" target="_blank" rel="nofollow">
+            access keys manager</a>.
           </p>
+          <pre><code>var ISBNDB = require("isbndb")
+ISBNDB.initialize("YOUR_API_KEY_HERE")
+</code></pre>
+          <h4>Books API</h4>
+            <p>If you know the ISBN number of a particular book, you can get the book directly, as illustrated</p>
+<pre><code>ISBNDB.Books.get("9780743294065", function(responseBody){
+  // .... successful response callback
+}, function(errorResponse){
+  // .... error callback
+})
 
-          <p>
-            <pre>
-              <code>
-                var ISBNDB = require('isbndb')
-                ISBNDB.initialize("YOUR_API_KEY_HERE")
-              </code>
-            </pre>
-          </p>
+// .... Or, you could use the promise implementation in the following manner. Promise based examples will be used from here on
 
-          <p>
-            Now, you can use the API as desired. For instance, if you want to search the book "Is God a Mathematician?" whose 13-Digit ISBN number is "9780743294065", it can be done using:
-          </p>
-
-          <p>
-            <pre>
-              <code>
-                ISBNDB.Books.get("9780743294065", function(responseBody){
-                  // .... successful response callback
-                }, function(errorResponse){
-                  // .... error callback
-                })
-              </code>
-            </pre>
-          </p>
-
-          <h3>
-            <a name="rather-drive-stick" class="anchor" href="#rather-drive-stick">
-              <span class="octicon octicon-link"></span>
-            </a>
-            Issues and Suggestions
-          </h3>
-
+ISBNDB.Books.get("9780743294065")
+.then(function(bookData){
+  // .... Play with book data here
+}, function(errorObject){
+  // .... Handle errors here
+})
+</code></pre>
+            <p>If you desire to search books written by Shakespeare, it can be done in the following manner.</p>
+<pre><code>ISBNDB.Books.search({query: "William Shakespeare", type: "author_name"})
+.then(function(books){
+  // .... A list of books published by William Shakespeare
+}, function(errorObject){
+  // .... Handle errors here
+})
+</code></pre>
+            <h4>Authors API</h4>
+            <p>If you know the <code>author_id</code> for any author, you can directly get the author data as below:</p>
+<pre><code>ISBNDB.Author.get("richards_rowland")
+.then(function(authorData){
+  // Play with author data
+}, function(errorObject){
+  // .... Handle errors here
+})
+</code></pre>
+            <p>You can also search for authors as shown below:</p>
+<pre><code>ISBNDB.Author.search("william")
+.then(function(authors){
+  // An array of authors
+}, function(errorObject){
+  // .... Handle errors here
+})
+</code></pre>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Issues and Suggestions</h2>
           <p>
             Please report all the issues in the Github Issues Page, suggestions are also welcome. You can also mail me at 
             <a href="mailto:rohit0981989@gmail.com">rohit0981989@gmail.com</a> for the same.
           </p>
-
-          <h3>
-            <a name="rather-drive-stick" class="anchor" href="#rather-drive-stick">
-              <span class="octicon octicon-link"></span>
-            </a>
-            Future Modifications
-          </h3>
-
-          <p>
-            <ul class="task-list">
-              <li>Addition of Authors API</li>
-              <li>Addition of Publishers API</li>
-              <li>Addition of Categories API</li>
-              <li>Addition of Subjects API</li>
-              <li>Change from Callback to Promises</li>
-            </ul>
-          </p>
-
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/rohit9889/isbndbjs/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/rohit9889/isbndbjs/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/rohit9889/isbndbjs"></a> is maintained by <a href="https://github.com/rohit9889">Rohit Sharma</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Future Modifications</h2>
+          <ul class="bullet-less">
+            <li>
+              <i class="fa fa-check"></i>
+              Addition of Publishers API
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Addition of Categories API
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Addition of Subjects API
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      if(location.host != "localhost" && location.host != "my-personal-site.com"){
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-20113038-3', 'auto');
-      ga('send', 'pageview');
+        ga('create', 'UA-20113038-3', 'auto');
+        ga('send', 'pageview');
+      }
     </script>
   </body>
 </html>
